@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+                
+                        <div id="canvas" style="width: 100%; height: 400px;"></div>
+                       
+                        
+                        
+        </div>
+        <div class="col-md-6">
+            <p><strong>Job Id:</strong>2089120891230</p>
+            <p><strong>Job Title:</strong>UI/UX Developer Developer</p>
+            <p><strong>Job Category:</strong>Developer</p>
+            <p><strong>Years of experience Required:</strong></p>
+            <p><strong>Location:</strong>Banglore,India</p>
+            <p><strong>Skills Required:</strong>Front-End Development,Back-End Development,Angularjs,Nodejs,Reactjs,ReactNative</p>
+            <p><strong>Job Type:</strong>Full Time</p>
+            <p><strong>Job Description:</strong></p>
+               <h4>Summary</h4>
+              <p> Coordinates the delivery of applications according to agreed upon business solution goals and objectives.  Maintains records of routine expenditures to ensure budgetary compliance. 
+            </p>
+<p><Strong>Essential Job Functions:</Strong></p>
+    <p>* Coordinates moderately complex to complex activities of functional areas or of department account leads to ensure that business solution objectives are met.</p>
+    <p> * Interprets demand forecasts and assists functional areas or departments in planning and delivering end-to-end services.</p>
+     <p> * Oversees account specific service problems and the prioritization of work requests.</p>
+    <p> * Maintains records of expenditures to ensure that costs do not exceed approved budgets. Identifies and escalates issues related to budgetary compliance in relation to expenditures.</p>
+    <p> * Coordinates communications between functional areas or departments and clients to ensure that integration of new, enhanced and existing service offerings meet client specifications.</p>
+    <p> * Assists in developing new business proposals and introducting new technologies to enhance competitiveness of company products and services.</p>
+     <p> * Identifies service improvements to increase customer satisfaction. Communicates improvement needs to appropriate parties to ensure timely implementation and to maintain client satisfaction.</p>
+    <p>* Ensures delivery of projects meet client and company expectations and needs.</p>
+       <p> * Provides leadership and work guidance to less experienced personnel.</p>
+         <p ><strong>Basic Qualifications</strong></p>  
+           
+       <p> * Bachelor's degree or equivalent combination of education and experience</p>
+        <p> * Bachelor's degree in business administration, engineering, information systems or related field preferred</p>
+        <p>* Six or more years of support services or project or program experience</p>
+        <p>* Experience working with the technology industry</p>
+        <p>* Experience working with company products and operating systems</p>
+        <p ><strong>Other Qualifications</strong></p>
+            
+        <p> *project management skills</p>
+        <p>*Good analytical and problem solving skills</p>
+        <p>*Good interpersonal skills to interact with customers and team members</p>
+        <p>*Good leadership and organizational skills</p>
+        <p>*Good communication skills</p>
+        <p>*Accounting skills</p>
+        <p>*Ability to work in a team environment</p>
+       <p>*Willingness to travel</p> 
+<div>
+        <button type="submit" class="btn btn-primary">Apply</button>
+</div>
+
+        </div>
+    </div>
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        function getGeolocation() {
+          navigator.geolocation.getCurrentPosition(drawMap);
+        }
+        function drawMap(geoPos) {
+          geolocate = new google.maps.LatLng(geoPos.coords.latitude, geoPos.coords.longitude);
+          let mapProp = {
+            center: geolocate,
+            zoom:5,
+          };
+          let map=new google.maps.Map(document.getElementById('canvas'),mapProp);
+          let infowindow = new google.maps.InfoWindow({
+            map: map,
+            position: geolocate,
+            content:
+              `Location from HTML5 Geolocation:
+                 <br>Latitude: ${geoPos.coords.latitude}
+                 <br>Longitude: ${geoPos.coords.longitude}`
+             });
+        }
+        getGeolocation();
+       </script>
