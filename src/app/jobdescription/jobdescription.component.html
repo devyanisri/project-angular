@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngFor="let d of desc">
     <div class="row">
         <div class="col-md-6">
                 
@@ -8,46 +8,26 @@
                         
         </div>
         <div class="col-md-6">
-            <p><strong>Job Id:</strong>2089120891230</p>
-            <p><strong>Job Title:</strong>UI/UX Developer Developer</p>
-            <p><strong>Job Category:</strong>Developer</p>
-            <p><strong>Years of experience Required:</strong></p>
-            <p><strong>Location:</strong>Banglore,India</p>
-            <p><strong>Skills Required:</strong>Front-End Development,Back-End Development,Angularjs,Nodejs,Reactjs,ReactNative</p>
-            <p><strong>Job Type:</strong>Full Time</p>
-            <p><strong>Job Description:</strong></p>
-               <h4>Summary</h4>
-              <p> Coordinates the delivery of applications according to agreed upon business solution goals and objectives.  Maintains records of routine expenditures to ensure budgetary compliance. 
-            </p>
-<p><Strong>Essential Job Functions:</Strong></p>
-    <p>* Coordinates moderately complex to complex activities of functional areas or of department account leads to ensure that business solution objectives are met.</p>
-    <p> * Interprets demand forecasts and assists functional areas or departments in planning and delivering end-to-end services.</p>
-     <p> * Oversees account specific service problems and the prioritization of work requests.</p>
-    <p> * Maintains records of expenditures to ensure that costs do not exceed approved budgets. Identifies and escalates issues related to budgetary compliance in relation to expenditures.</p>
-    <p> * Coordinates communications between functional areas or departments and clients to ensure that integration of new, enhanced and existing service offerings meet client specifications.</p>
-    <p> * Assists in developing new business proposals and introducting new technologies to enhance competitiveness of company products and services.</p>
-     <p> * Identifies service improvements to increase customer satisfaction. Communicates improvement needs to appropriate parties to ensure timely implementation and to maintain client satisfaction.</p>
-    <p>* Ensures delivery of projects meet client and company expectations and needs.</p>
-       <p> * Provides leadership and work guidance to less experienced personnel.</p>
-         <p ><strong>Basic Qualifications</strong></p>  
-           
-       <p> * Bachelor's degree or equivalent combination of education and experience</p>
-        <p> * Bachelor's degree in business administration, engineering, information systems or related field preferred</p>
-        <p>* Six or more years of support services or project or program experience</p>
-        <p>* Experience working with the technology industry</p>
-        <p>* Experience working with company products and operating systems</p>
-        <p ><strong>Other Qualifications</strong></p>
-            
-        <p> *project management skills</p>
-        <p>*Good analytical and problem solving skills</p>
-        <p>*Good interpersonal skills to interact with customers and team members</p>
-        <p>*Good leadership and organizational skills</p>
-        <p>*Good communication skills</p>
-        <p>*Accounting skills</p>
-        <p>*Ability to work in a team environment</p>
-       <p>*Willingness to travel</p> 
+            <p><strong>Job Id:</strong>{{d.jobId}}</p>
+            <p><strong>Job Title:</strong>{{d.jobTitle}}</p>
+            <p><strong>Job Category:</strong>{{d.jobCategory}}</p>
+            <p><strong>Years of experience Required:</strong>{{d.years}}</p> 
+            <p><strong>Location:</strong>{{d.primaryLocation}}</p>
+            <p><strong>Additional Location:</strong>{{d.additionalLocation}}</p>
+            <p><strong>Job Type:</strong>{{d.jobType}}</p>
+            <p><strong>Job Qualification:</strong>{{d.jobQualification}}</p>
+            <p><strong>Working Environment:</strong>{{d.workEnvironment}}</p>
+            <p><strong>Recruiter:</strong>{{d.recruiter}}</p>
+            <p><strong>Similar Jobs:</strong>{{d.similarJobs}}</p>
+            <h4>Summary</h4>
+              <p>{{d.jobSummary}}</p>
+            <p><strong>Job Description:</strong>{{d.jobDescription}}</p>
+                    
+ 
 <div>
-        <button type="submit" class="btn btn-primary">Apply</button>
+  <p><button (click)="onClick()" type="button">Click me!</button></p>
+        <div id="result"></div>     
+  
 </div>
 
         </div>
@@ -82,3 +62,4 @@
         }
         getGeolocation();
        </script>
+      

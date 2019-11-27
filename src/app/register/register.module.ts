@@ -7,7 +7,7 @@ import {FileUploadModule} from 'ng2-file-upload';
   declarations: [],
   imports: [
     CommonModule, 
-    FileUploadModule
+    
   ]
 })
 export class RegisterModule { }

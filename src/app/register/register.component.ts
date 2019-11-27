@@ -1,30 +1,26 @@
-
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {FileUploader} from 'ng2-file-upload';
- 
+import { Component, OnInit } from '@angular/core';
+import { Employee } from '../employee';
+import { DataService } from '../data.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  @ViewChild('fileInput',{static: false}) fileInput: ElementRef;
-  uploader: FileUploader;
-  isDropOver: boolean;
- 
+  emp: Employee= new Employee("","","","","","",[],[]); 
+  qualifications:string[] = ["", "", ""];
+  
+  constructor(private httpclientservice:DataService) { }
 
-  ngOnInit(): void{
-    const headers = [{name: 'Accept', value: 'application/json'}];
-    this.uploader = new FileUploader({url: 'api/files', autoUpload: true, headers: headers});
- 
-    this.uploader.onCompleteAll = () => alert('File uploaded');
+  ngOnInit() {
   }
-  fileOverAnother(e: any): void {
-    this.isDropOver = e;
-  }
- 
-  fileClicked() {
-    this.fileInput.nativeElement.click();
-  }
-
+  createprofile():void{
+    console.log(this.emp)
+    this.emp.qualifications = this.qualifications;
+    this.httpclientservice.createprofile(this.emp)
+      .subscribe(data => {
+        alert("Employee created successfully.");
+      });
+    
+  } 
 }
